@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/drawable/buttonshadow.xml" value="0.2555" />
         <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/drawable/buttonshape.xml" value="0.2555" />
         <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/layout/activity_add_records.xml" value="0.25" />
         <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/layout/activity_delete_records.xml" value="0.25" />
