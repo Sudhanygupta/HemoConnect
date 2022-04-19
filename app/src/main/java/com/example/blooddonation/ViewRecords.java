@@ -22,5 +22,6 @@ public class ViewRecords extends AppCompatActivity {
         id=findViewById(R.id.editTextTextPersonName);
         singlerec=findViewById(R.id.button4);
         allrecs=findViewById(R.id.button5);
+        String id=srec.getText().toString();
     }
 }
