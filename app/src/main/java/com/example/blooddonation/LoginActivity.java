@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (un.getText().toString().equals("admin")&&pass.getText().toString().equals("admin")){
+                if (un.getText().toString().equals("root")&&pass.getText().toString().equals("vpms")){
                     openMainActivity();
                     Toast.makeText(getApplicationContext(),"Welcome",Toast.LENGTH_SHORT).show();
                 }
