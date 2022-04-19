@@ -24,20 +24,23 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 if (un.getText().toString().equals("admin")&&pass.getText().toString().equals("admin")){
                     openMainActivity();
                     Toast.makeText(getApplicationContext(),"Welcome",Toast.LENGTH_SHORT).show();
                 }
+                /*
+                else if (un.getText().toString().equals(null)||pass.getText().toString().equals(null)){
+                    Toast.makeText(getApplicationContext(),"Please enter credentials",Toast.LENGTH_SHORT).show();
+                }
+                */
                 else{
                     int count=3;
-                    Toast.makeText(getApplicationContext(),"Wrong credentials",Toast.LENGTH_SHORT).show();
                     count--;
+                    Toast.makeText(getApplicationContext(),"Invalid credentials",Toast.LENGTH_SHORT).show();
                     un.setText(null);
                     pass.setText(null);
                     if(count==0){
-                        login.setEnabled(false);
+                        login.setClickable(false);
                     }
                 }
             }
