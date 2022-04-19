@@ -13,6 +13,7 @@ public class SignupActivity extends AppCompatActivity {
 
     EditText un, pass, repass;
     Button signup;
+    DBhelper db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,10 +23,44 @@ public class SignupActivity extends AppCompatActivity {
         un=findViewById(R.id.editTextTextPersonName9);
         pass=findViewById(R.id.editTextTextPersonName10);
         repass=findViewById(R.id.editTextTextPersonName11);
+        db=new DBhelper(this);
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String username=un.getText().toString();
+                String password=pass.getText().toString();
+                String repassword=repass.getText().toString();
+
+                if(username.equals("")||password.equals(""))
+                    Toast.makeText(SignupActivity.this, "Enter all creds", Toast.LENGTH_SHORT).show();
+                else{
+                    if(password.equals(repassword)){
+                        Boolean checkuser=db.check(username);
+                        if(checkuser==false){
+                            Boolean insert=db.insert(username, password);
+                            if(insert==true) {
+                                Toast.makeText(SignupActivity.this, "Registered.", Toast.LENGTH_SHORT).show();
+                                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(i);
+                            }
+                            else{
+                                Toast.makeText(SignupActivity.this, "Error.", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        else{
+                            Toast.makeText(SignupActivity.this, "User exists. Please login.", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                    else {
+                        Toast.makeText(SignupActivity.this, "Passwords do not match.", Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+
+
+
                 loginActivity();
             }
         });
