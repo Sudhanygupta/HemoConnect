@@ -11,8 +11,8 @@ import android.widget.Toast;
 
 public class SignupActivity extends AppCompatActivity {
 
-    EditText un, pass;
-    Button login;
+    EditText un, pass, repass;
+    Button login, signup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +21,7 @@ public class SignupActivity extends AppCompatActivity {
         login=findViewById(R.id.button8);
         un=findViewById(R.id.editTextTextPersonName9);
         pass=findViewById(R.id.editTextTextPersonName10);
+        repass=findViewById(R.id.editTextTextPersonName11);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
