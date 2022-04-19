@@ -18,13 +18,14 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        signup=findViewById(R.id.button9);
         login=findViewById(R.id.button8);
         un=findViewById(R.id.editTextTextPersonName9);
         pass=findViewById(R.id.editTextTextPersonName10);
         repass=findViewById(R.id.editTextTextPersonName11);
 
 
-
+        
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
