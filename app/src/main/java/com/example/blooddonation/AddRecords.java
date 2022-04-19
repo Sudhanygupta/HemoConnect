@@ -3,6 +3,7 @@ package com.example.blooddonation;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ public class AddRecords extends AppCompatActivity {
 
     Button add;
     EditText dname, rname, eid, ebloodtype, ddate, rdate;
+    Intent intent;
     private Object SQLiteDataBaseQueryHolder;
 
     @Override
@@ -35,6 +37,17 @@ public class AddRecords extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //insert();
+                String dononame=dname.getText().toString();
+                String recname=rname.getText().toString();
+                String id=eid.getText().toString();
+                String bloodtype=ebloodtype.getText().toString();
+                String donodate=ddate.getText().toString();
+                String recdate=rdate.getText().toString();
+                DBHandler dbHandler=new DBHandler(AddRecords.this);
+                dbHandler.adddetails(dononame, recname, id, bloodtype, donodate, recdate);
+                intent=new Intent(AddRecords.this, ViewRecords.class);
+                startActivity(intent);
+                Toast.makeText(getApplicationContext(), "Details Inserted Successfully",Toast.LENGTH_SHORT).show();
             }
         });
 
