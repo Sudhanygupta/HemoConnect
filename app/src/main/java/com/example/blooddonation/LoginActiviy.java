@@ -12,38 +12,30 @@ import android.widget.Toast;
 public class LoginActiviy extends AppCompatActivity {
 
     EditText un, pass;
-    Button login;
+    Button login, signup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_activiy);
+
+
         un=findViewById(R.id.editTextTextPersonName12);
         pass=findViewById(R.id.editTextTextPersonName13);
         login=findViewById(R.id.button10);
+        signup=findViewById(R.id.button11);
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (un.getText().toString().equals("root")&&pass.getText().toString().equals("vpms")){
-                    openMainActivity();
-                    Toast.makeText(getApplicationContext(),"Welcome",Toast.LENGTH_SHORT).show();
-                }
-                /*
-                else if (un.getText().toString().equals(null)||pass.getText().toString().equals(null)){
-                    Toast.makeText(getApplicationContext(),"Please enter credentials",Toast.LENGTH_SHORT).show();
-                }
-                */
-                else{
-                    int count=3;
-                    count--;
-                    Toast.makeText(getApplicationContext(),"Invalid credentials",Toast.LENGTH_SHORT).show();
-                    un.setText(null);
-                    pass.setText(null);
-                    if(count==0){
-                        login.setClickable(false);
-                    }
-                }
+                openMainActivity();
             }
         });
+
+    }
+
+    public void openSignup(){
+        Intent i=new Intent(this, SignupActivity.class);
+        startActivity(i);
     }
 
     public void openMainActivity(){
