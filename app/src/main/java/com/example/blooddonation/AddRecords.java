@@ -34,7 +34,7 @@ public class AddRecords extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                insert();
+                //insert();
             }
         });
 
@@ -74,6 +74,7 @@ public class AddRecords extends AppCompatActivity {
     }
     */
 
+    /*
     public void insert() {
         try {
             String donname=dname.getText().toString();
@@ -106,4 +107,5 @@ public class AddRecords extends AppCompatActivity {
             Toast.makeText(this,"Error",Toast.LENGTH_SHORT).show();
         }
     }
+    */
 }
