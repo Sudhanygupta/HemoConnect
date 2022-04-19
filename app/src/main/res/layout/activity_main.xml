@@ -8,52 +8,53 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button3"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:text="View records"
         android:background="@drawable/buttonshape"
+        android:text="Delete records"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.483" />
+        app:layout_constraintVertical_bias="0.879" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:text="Add records"
         android:background="@drawable/buttonshape"
+        android:text="Add records"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.606" />
+        app:layout_constraintVertical_bias="0.766" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:text="Delete records"
         android:background="@drawable/buttonshape"
+        android:text="View records"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.718" />
+        app:layout_constraintVertical_bias="0.643" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="182dp"
-        android:layout_height="301dp"
+        android:layout_width="191dp"
+        android:layout_height="213dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037"
+        app:layout_constraintVertical_bias="0.173"
         app:srcCompat="@drawable/appicon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
