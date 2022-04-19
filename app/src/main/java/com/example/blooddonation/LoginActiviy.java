@@ -35,17 +35,16 @@ public class LoginActiviy extends AppCompatActivity {
                 if(username.equals("")||pass.equals(""))
                     Toast.makeText(LoginActiviy.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
                 else{
-                    Boolean checkuserpass = db.checkboth(username, password);
+                    Boolean checkuserpass=db.checkboth(username, password);
                     if(checkuserpass==true){
-                        Toast.makeText(LoginActiviy.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
-                        Intent intent  = new Intent(getApplicationContext(), MainActivity.class);
+                        Toast.makeText(LoginActiviy.this, "Sign in successful. Welcome.", Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
-                    }else{
+                    }
+                    else{
                         Toast.makeText(LoginActiviy.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                     }
                 }
-
-                openMainActivity();
             }
         });
 
@@ -59,11 +58,6 @@ public class LoginActiviy extends AppCompatActivity {
 
     public void openSignup(){
         Intent i=new Intent(this, SignupActivity.class);
-        startActivity(i);
-    }
-
-    public void openMainActivity(){
-        Intent i=new Intent(this, MainActivity.class);
         startActivity(i);
     }
 }

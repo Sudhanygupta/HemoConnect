@@ -45,9 +45,9 @@ public class DBhelper extends SQLiteOpenHelper {
         else return false;
     }
 
-    public boolean checkboth(String username, String pass){
+    public boolean checkboth(String username, String password){
         SQLiteDatabase db=this.getWritableDatabase();
-        Cursor c=db.rawQuery("select * from users where username=? and password=?", new String[] {username, pass});
+        Cursor c=db.rawQuery("select * from users where username=? and password=?", new String[] {username, password});
         if(c.getCount()>0)
             return true;
         else return false;
