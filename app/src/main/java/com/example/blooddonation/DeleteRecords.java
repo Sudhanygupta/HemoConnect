@@ -3,6 +3,7 @@ package com.example.blooddonation;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -37,15 +38,13 @@ public class DeleteRecords extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(eid.getText().toString()!=null){
-                    Toast.makeText(DeleteRecords.this, "Deleted.",Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Toast.makeText(DeleteRecords.this, "Please enter ID to delete",Toast.LENGTH_SHORT).show();
-                }
+                    db.deletedetails(id);
+                    Toast.makeText(DeleteRecords.this, "Deleted the entry.", Toast.LENGTH_SHORT).show();
+                    Intent i=new Intent(DeleteRecords.this, MainActivity.class);
+                    startActivity(i);
             }
         });
-    }
 
+    }
 
 }

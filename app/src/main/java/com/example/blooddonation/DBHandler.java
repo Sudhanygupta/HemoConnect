@@ -87,9 +87,9 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
 
-    public void deletedetails(){
+    public void deletedetails(String id){
             SQLiteDatabase db=this.getWritableDatabase();
-            db.delete(bloodrecords, id+"=?",new String[]{String.valueOf(id)});
+            db.delete(bloodrecords, "id=?",new String[]{id});
             db.close();
         }
 
