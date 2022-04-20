@@ -70,21 +70,21 @@ public class DBHandler extends SQLiteOpenHelper {
         return AL;
         }
 
-/*
+        //remove getcodebyid if any error
     public ArrayList<HashMap<String, String>> getrecordbyid(String id){
         SQLiteDatabase db=this.getWritableDatabase();
         ArrayList<HashMap<String, String>> AL=new ArrayList<>();
-        Cursor c=db.rawQuery("SELECT dononame, id, donodate FROM bloodrecords where id=?", new String[]{id});
+        Cursor c=db.rawQuery("SELECT dononame, id, bloodtype FROM bloodrecords where id=?", new String[]{id});
         while (c.moveToNext()){
-            HashMap<String,String> r=new HashMap<>();
-            r.put("dononame",c.getString(c.getColumnIndexOrThrow(dononame)));
-            r.put("id",c.getString(c.getColumnIndexOrThrow(id)));
-            r.put("donodate",c.getString(c.getColumnIndexOrThrow(donodate)));
-            AL.add(r);
+            HashMap<String,String> br=new HashMap<>();
+            br.put("dononame",c.getString(c.getColumnIndexOrThrow(dononame)));
+            br.put("id", c.getString(c.getColumnIndexOrThrow(id)));
+            br.put("bloodtype",c.getString(c.getColumnIndexOrThrow(bloodtype)));
+            AL.add(br);
         }
         return AL;
     }
-*/
+
 
     public Integer deletedetails(String id){
             SQLiteDatabase db=this.getWritableDatabase();
