@@ -11,6 +11,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,7 +19,7 @@ import java.util.HashMap;
 public class ViewRecords extends AppCompatActivity {
 
     Button singlerec, allrecs, back;
-    EditText id;
+    EditText eid;
     Intent i;
     DBHandler db;
     @Override
@@ -26,20 +27,13 @@ public class ViewRecords extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_records);
 
-        id=findViewById(R.id.editTextTextPersonName);
+        eid=findViewById(R.id.editTextTextPersonName);
         singlerec=findViewById(R.id.button4);
         allrecs=findViewById(R.id.button5);
-        int i;
-        back=findViewById(R.id.button8);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(ViewRecords.this, MainActivity.class);
-                startActivity(i);
-            }
-        });
+
 
         db=new DBHandler(this);
+
         allrecs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,6 +43,8 @@ public class ViewRecords extends AppCompatActivity {
                 lv.setAdapter(adapter);
             }
         });
+
+
 
         /*
         singlerec.setOnClickListener(new View.OnClickListener() {
@@ -61,5 +57,15 @@ public class ViewRecords extends AppCompatActivity {
             }
         });
         */
+
+        back=findViewById(R.id.button8);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(ViewRecords.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
+
     }
 }

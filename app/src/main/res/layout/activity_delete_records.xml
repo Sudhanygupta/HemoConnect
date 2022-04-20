@@ -38,7 +38,7 @@
 
     <Button
         android:id="@+id/button7"
-        android:text="Remove records"
+        android:text="Remove record"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:background="@drawable/buttonshape"
