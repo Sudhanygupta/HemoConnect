@@ -33,7 +33,7 @@ public class SignupActivity extends AppCompatActivity {
                 String repassword=repass.getText().toString();
 
                 if(username.equals("")||password.equals(""))
-                    Toast.makeText(SignupActivity.this, "Enter all creds", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignupActivity.this, "Enter all credentials.", Toast.LENGTH_SHORT).show();
                 else{
                     if(password.equals(repassword)){
                         Boolean checkuser=db.check(username);
@@ -51,12 +51,10 @@ public class SignupActivity extends AppCompatActivity {
                         else{
                             Toast.makeText(SignupActivity.this, "User exists. Please login.", Toast.LENGTH_SHORT).show();
                         }
-
                     }
                     else {
                         Toast.makeText(SignupActivity.this, "Passwords do not match.", Toast.LENGTH_SHORT).show();
                     }
-
                 }
                 loginActivity();
             }
@@ -67,4 +65,5 @@ public class SignupActivity extends AppCompatActivity {
         Intent i=new Intent(this, LoginActiviy.class);
         startActivity(i);
     }
+
 }

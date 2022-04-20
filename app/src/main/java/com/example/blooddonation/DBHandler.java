@@ -33,41 +33,42 @@ public class DBHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTable = "CREATE TABLE "+bloodrecords +"("+id+"VARCHAR,"+dononame+"VARCHAR, "+recname+"VARCHAR, "+bloodtype+"VARCHAR, "+donodate+"VARCHAR, "+recdate+"VARCHAR"+")";
-        db.execSQL(createTable);
-    }
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
-        db.execSQL("DROP TABLE IF EXISTS " + bloodrecords);
-        onCreate(db);
+        db.execSQL("create table bloodrecords(dononame varchar, recname varchar, id varchar, bloodtype varchar, donodate varchar, recdate varchar)");
     }
 
-    void adddetails(String dononame, String recname, String id, String bloodtype, String donodate, String recdate){
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int i, int i1){
+        db.execSQL("drop table if exists bloodrecords");
+    }
+
+    public boolean insert(String dononame, String recname, String id, String bloodtype, String donodate, String recdate){
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
-        contentValues.put("id", id);
         contentValues.put("dononame", dononame);
+        contentValues.put("id", id);
         contentValues.put("recname", recname);
         contentValues.put("bloodtype", bloodtype);
         contentValues.put("donodate", donodate);
         contentValues.put("recdate", recdate);
         long resultset=db.insert("bloodrecords", null, contentValues);
-        db.close();
+        if(resultset==-1)
+            return false;
+        else return true;
     }
 
     public ArrayList<HashMap<String, String>> getdetails(){
         SQLiteDatabase db=getWritableDatabase();
-        ArrayList<HashMap<String, String>> br=new ArrayList<>();
-        String query="SELECT dononame, bloodtype, id FROM "+ bloodrecords;
+        ArrayList<HashMap<String, String>> AL=new ArrayList<>();
+        String query="SELECT dononame, bloodtype, id FROM bloodrecords";
         Cursor c=db.rawQuery(query,null);
         while (c.moveToNext()){
-            HashMap<String,String> bloodrecord=new HashMap<>();
-            bloodrecord.put("dononame",c.getString(c.getColumnIndex(dononame)));
-            bloodrecord.put("bloodtype",c.getString(c.getColumnIndex(bloodtype)));
-            bloodrecord.put("id",c.getString(c.getColumnIndex(id)));
-            br.add(bloodrecord);
+            HashMap<String,String> br=new HashMap<>();
+            br.put("id",c.getString(c.getColumnIndexOrThrow(id)));
+            br.put("dononame", c.getString(c.getColumnIndexOrThrow(dononame)));
+            br.put("bloodtype",c.getString(c.getColumnIndexOrThrow(bloodtype)));
+            AL.add(br);
         }
-        return br;
+        return AL;
         }
 
         public void deletedetails(){
@@ -75,4 +76,5 @@ public class DBHandler extends SQLiteOpenHelper {
             db.delete(bloodrecords, id+"=?",new String[]{String.valueOf(id)});
             db.close();
         }
+
 }

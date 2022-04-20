@@ -19,6 +19,7 @@ public class AddRecords extends AppCompatActivity {
     Button add;
     EditText dname, rname, eid, ebloodtype, ddate, rdate;
     Intent intent;
+    DBHandler db;
     private Object SQLiteDataBaseQueryHolder;
 
     @Override
@@ -33,6 +34,7 @@ public class AddRecords extends AppCompatActivity {
         ebloodtype=findViewById(R.id.editTextTextPersonName5);
         ddate=findViewById(R.id.editTextTextPersonName6);
         rdate=findViewById(R.id.editTextTextPersonName7);
+        db=new DBHandler(this);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,11 +45,14 @@ public class AddRecords extends AppCompatActivity {
                 String bloodtype=ebloodtype.getText().toString();
                 String donodate=ddate.getText().toString();
                 String recdate=rdate.getText().toString();
-                DBHandler dbHandler=new DBHandler(AddRecords.this);
-                dbHandler.adddetails(dononame, recname, id, bloodtype, donodate, recdate);
-                intent=new Intent(AddRecords.this, ViewRecords.class);
-                startActivity(intent);
-                Toast.makeText(getApplicationContext(), "Details Inserted Successfully",Toast.LENGTH_SHORT).show();
+                //DBHandler dbHandler=new DBHandler(AddRecords.this);
+                //dbHandler.insert(dononame, recname, id, bloodtype, donodate, recdate);
+                Boolean insert=db.insert(dononame, recname, id, bloodtype, donodate, recdate);
+                if(insert==true){
+                    Toast.makeText(getApplicationContext(), "Details Inserted Successfully",Toast.LENGTH_SHORT).show();
+                    intent=new Intent(AddRecords.this, MainActivity.class);
+                    startActivity(intent);
+                }
             }
         });
 
