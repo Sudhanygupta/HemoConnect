@@ -36,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
         deleterecords.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openDeleteRecords();
+                Intent i=new Intent(MainActivity.this, DeleteRecords.class);
+                startActivity(i);
             }
         });
     }
@@ -50,11 +51,5 @@ public class MainActivity extends AppCompatActivity {
         Intent i=new Intent(this, AddRecords.class);
         startActivity(i);
     }
-
-    public void openDeleteRecords(){
-        Intent i=new Intent(this, DeleteRecords.class);
-        startActivity(i);
-    }
-
 
 }

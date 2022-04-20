@@ -39,7 +39,7 @@ public class ViewRecords extends AppCompatActivity {
             public void onClick(View view) {
                 ArrayList<HashMap<String, String>> AL=db.getdetails();
                 ListView lv=(ListView) findViewById(R.id.user_list);
-                ListAdapter adapter=new SimpleAdapter(ViewRecords.this, AL, R.layout.list_row,new String[]{"dononame","id","bloodtype"}, new int[]{R.id.dononame, R.id.bloodtype, R.id.id});
+                ListAdapter adapter=new SimpleAdapter(ViewRecords.this, AL, R.layout.list_row,new String[]{"dononame", "id", "bloodtype"}, new int[]{R.id.dononame, R.id.bloodtype, R.id.id});
                 lv.setAdapter(adapter);
             }
         });
