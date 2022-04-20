@@ -26,7 +26,7 @@ public class DeleteRecords extends AppCompatActivity {
         String id=eid.getText().toString();
 
 
-        /*
+
         delete=findViewById(R.id.button7);
             delete.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -39,7 +39,7 @@ public class DeleteRecords extends AppCompatActivity {
                     }
                 }
             });
-            */
+
 
         home=findViewById(R.id.button12);
         home.setOnClickListener(new View.OnClickListener() {

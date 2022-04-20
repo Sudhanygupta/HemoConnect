@@ -22,14 +22,16 @@ public class MainActivity extends AppCompatActivity {
         viewrecords.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openViewRecords();
+                Intent i=new Intent(MainActivity.this, ViewRecords.class);
+                startActivity(i);
             }
         });
 
         addrecords.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openAddRecords();
+                Intent i=new Intent(MainActivity.this, AddRecords.class);
+                startActivity(i);
             }
         });
 
@@ -41,15 +43,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-    public void openViewRecords(){
-        Intent i=new Intent(this, ViewRecords.class);
-        startActivity(i);
-    }
-
-    public void openAddRecords(){
-        Intent i=new Intent(this, AddRecords.class);
-        startActivity(i);
-    }
-
 }

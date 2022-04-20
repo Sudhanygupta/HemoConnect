@@ -70,7 +70,7 @@ public class DBHandler extends SQLiteOpenHelper {
         return AL;
         }
 
-
+/*
     public ArrayList<HashMap<String, String>> getrecordbyid(String id){
         SQLiteDatabase db=this.getWritableDatabase();
         ArrayList<HashMap<String, String>> AL=new ArrayList<>();
@@ -84,6 +84,7 @@ public class DBHandler extends SQLiteOpenHelper {
         }
         return AL;
     }
+*/
 
     public Integer deletedetails(String id){
             SQLiteDatabase db=this.getWritableDatabase();
