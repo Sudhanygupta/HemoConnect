@@ -21,19 +21,18 @@ public class ViewRecords extends AppCompatActivity {
     Button singlerec, allrecs, back;
     EditText eid;
     Intent i;
+    String id=eid.getText().toString();
     DBHandler db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_records);
 
+        db=new DBHandler(this);
+
         eid=findViewById(R.id.editTextTextPersonName);
         singlerec=findViewById(R.id.button4);
         allrecs=findViewById(R.id.button5);
-
-
-        db=new DBHandler(this);
-
         allrecs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,8 +42,6 @@ public class ViewRecords extends AppCompatActivity {
                 lv.setAdapter(adapter);
             }
         });
-
-
 
         /*
         singlerec.setOnClickListener(new View.OnClickListener() {

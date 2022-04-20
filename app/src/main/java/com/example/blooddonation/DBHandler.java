@@ -71,7 +71,6 @@ public class DBHandler extends SQLiteOpenHelper {
         }
 
 
-
     public ArrayList<HashMap<String, String>> getrecordbyid(String id){
         SQLiteDatabase db=this.getWritableDatabase();
         ArrayList<HashMap<String, String>> AL=new ArrayList<>();
@@ -86,11 +85,9 @@ public class DBHandler extends SQLiteOpenHelper {
         return AL;
     }
 
-
-    public void deletedetails(String id){
+    public Integer deletedetails(String id){
             SQLiteDatabase db=this.getWritableDatabase();
-            db.delete(bloodrecords, "id=?",new String[]{id});
-            db.close();
+            return db.delete(bloodrecords, "id=?", new String[]{id});
         }
 
 }

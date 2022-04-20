@@ -26,16 +26,20 @@ public class DeleteRecords extends AppCompatActivity {
         String id=eid.getText().toString();
 
 
+        /*
         delete=findViewById(R.id.button7);
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                    db.deletedetails(id);
-                    Toast.makeText(DeleteRecords.this, "Deleted the entry.", Toast.LENGTH_SHORT).show();
-                    Intent i=new Intent(DeleteRecords.this, MainActivity.class);
-                    startActivity(i);
-            }
-        });
+            delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Integer deleterows=db.deletedetails(eid.getText().toString());
+                    if (deleterows > 0) {
+                        Toast.makeText(DeleteRecords.this, "Data deleted", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(DeleteRecords.this, "Data not deleted", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+            */
 
         home=findViewById(R.id.button12);
         home.setOnClickListener(new View.OnClickListener() {
