@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 public class DBHandler extends SQLiteOpenHelper {
     private static final int DB_VERSION = 1;
-    private static final String DBNAME="usersdb";
+    private static final String DBNAME="usersdb.db";
     private static final String bloodrecords="bloodrecords";
     private static final String id="id";
     private static final String dononame="dononame";
@@ -28,7 +28,7 @@ public class DBHandler extends SQLiteOpenHelper {
     }
     */
 
-    public DBHandler(Context context){ super(context, "usersdb", null, 1);
+    public DBHandler(Context context){ super(context, "usersdb.db", null, 1);
     }
 
     @Override
@@ -59,8 +59,7 @@ public class DBHandler extends SQLiteOpenHelper {
     public ArrayList<HashMap<String, String>> getdetails(){
         SQLiteDatabase db=this.getWritableDatabase();
         ArrayList<HashMap<String, String>> AL=new ArrayList<>();
-        String query="SELECT dononame, id, bloodtype FROM bloodrecords";
-        Cursor c=db.rawQuery(query,null);
+        Cursor c=db.rawQuery("SELECT dononame, id, bloodtype FROM bloodrecords",null);
         while (c.moveToNext()){
             HashMap<String,String> br=new HashMap<>();
             br.put("dononame", c.getString(c.getColumnIndexOrThrow(dononame)));
@@ -74,9 +73,8 @@ public class DBHandler extends SQLiteOpenHelper {
     public ArrayList<HashMap<String, String>> getrecordbyid(String id){
         SQLiteDatabase db=this.getWritableDatabase();
         ArrayList<HashMap<String, String>> AL=new ArrayList<>();
-        String query="SELECT dononame, id, donodate FROM bloodrecords";
-        Cursor c=db.query(bloodrecords, new String[]{dononame, id, donodate}, id+ "=?",new String[]{String.valueOf(id)},null, null, null, null);
-        if (c.moveToNext()){
+        Cursor c=db.rawQuery("SELECT dononame, id, donodate FROM bloodrecords where id=?", new String[]{id});
+        while (c.moveToNext()){
             HashMap<String,String> r=new HashMap<>();
             r.put("dononame",c.getString(c.getColumnIndexOrThrow(dononame)));
             r.put("id",c.getString(c.getColumnIndexOrThrow(id)));
