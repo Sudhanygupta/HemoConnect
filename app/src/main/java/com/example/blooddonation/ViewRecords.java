@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListAdapter;
@@ -16,10 +17,10 @@ import java.util.HashMap;
 
 public class ViewRecords extends AppCompatActivity {
 
-    Button singlerec, allrecs;
+    Button singlerec, allrecs, back;
     EditText id;
-    TextView srec, allrec;
     Intent i;
+    DBHandler db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,11 +28,18 @@ public class ViewRecords extends AppCompatActivity {
 
         id=findViewById(R.id.editTextTextPersonName);
         singlerec=findViewById(R.id.button4);
-        String id=srec.getText().toString();
         allrecs=findViewById(R.id.button5);
+        String i=id.getText().toString();
+        back=findViewById(R.id.button8);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(ViewRecords.this, AddRecords.class);
+                startActivity(i);
+            }
+        });
 
-
-        DBHandler db=new DBHandler(this);
+        db=new DBHandler(this);
         ArrayList<HashMap<String, String>> AL=db.getdetails();
         ListView lv=(ListView) findViewById(R.id.user_list);
         ListAdapter adapter=new SimpleAdapter(ViewRecords.this, AL, R.layout.list_row,new String[]{"dononame","id","bloodtype"}, new int[]{R.id.dononame, R.id.bloodtype, R.id.id});
