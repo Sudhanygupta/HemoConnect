@@ -41,7 +41,7 @@ public class SignupActivity extends AppCompatActivity {
                             Boolean insert=db.insert(username, password);
                             if(insert==true) {
                                 Toast.makeText(SignupActivity.this, "Registered.", Toast.LENGTH_SHORT).show();
-                                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                                Intent i=new Intent(getApplicationContext(), MainActivity.class);
                                 startActivity(i);
                             }
                             else{
