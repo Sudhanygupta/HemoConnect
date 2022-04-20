@@ -45,8 +45,8 @@ public class DBHandler extends SQLiteOpenHelper {
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
         contentValues.put("dononame", dononame);
-        contentValues.put("id", id);
         contentValues.put("recname", recname);
+        contentValues.put("id", id);
         contentValues.put("bloodtype", bloodtype);
         contentValues.put("donodate", donodate);
         contentValues.put("recdate", recdate);
@@ -57,21 +57,36 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     public ArrayList<HashMap<String, String>> getdetails(){
-        SQLiteDatabase db=getWritableDatabase();
+        SQLiteDatabase db=this.getWritableDatabase();
         ArrayList<HashMap<String, String>> AL=new ArrayList<>();
-        String query="SELECT dononame, bloodtype, id FROM bloodrecords";
+        String query="SELECT dononame, id, bloodtype FROM bloodrecords";
         Cursor c=db.rawQuery(query,null);
         while (c.moveToNext()){
             HashMap<String,String> br=new HashMap<>();
-            br.put("id",c.getString(c.getColumnIndexOrThrow(id)));
             br.put("dononame", c.getString(c.getColumnIndexOrThrow(dononame)));
+            br.put("id",c.getString(c.getColumnIndexOrThrow(id)));
             br.put("bloodtype",c.getString(c.getColumnIndexOrThrow(bloodtype)));
             AL.add(br);
         }
         return AL;
         }
 
-        public void deletedetails(){
+    public ArrayList<HashMap<String, String>> getrecordbyid(String id){
+        SQLiteDatabase db=this.getWritableDatabase();
+        ArrayList<HashMap<String, String>> AL=new ArrayList<>();
+        String query="SELECT dononame, id, donodate FROM bloodrecords";
+        Cursor c=db.query(bloodrecords, new String[]{dononame, id, donodate}, id+ "=?",new String[]{String.valueOf(id)},null, null, null, null);
+        if (c.moveToNext()){
+            HashMap<String,String> r=new HashMap<>();
+            r.put("dononame",c.getString(c.getColumnIndexOrThrow(dononame)));
+            r.put("id",c.getString(c.getColumnIndexOrThrow(id)));
+            r.put("donodate",c.getString(c.getColumnIndexOrThrow(donodate)));
+            AL.add(r);
+        }
+        return AL;
+    }
+
+    public void deletedetails(){
             SQLiteDatabase db = this.getWritableDatabase();
             db.delete(bloodrecords, id+"=?",new String[]{String.valueOf(id)});
             db.close();

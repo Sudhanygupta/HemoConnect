@@ -26,16 +26,17 @@ public class ViewRecords extends AppCompatActivity {
         setContentView(R.layout.activity_view_records);
 
         //srec=findViewById(R.id.textView);
-        allrec=findViewById(R.id.textView2);
         //id=findViewById(R.id.editTextTextPersonName);
-        //singlerec=findViewById(R.id.button4);
+        singlerec=findViewById(R.id.button4);
+        String id=srec.getText().toString();
+        allrec=findViewById(R.id.textView2);
         allrecs=findViewById(R.id.button5);
-        //String id=srec.getText().toString();
+
 
         DBHandler db=new DBHandler(this);
-        ArrayList<HashMap<String, String>> userList = db.getdetails();
+        ArrayList<HashMap<String, String>> AL=db.getdetails();
         ListView lv=(ListView) findViewById(R.id.user_list);
-        ListAdapter adapter=new SimpleAdapter(ViewRecords.this, userList, R.layout.list_row,new String[]{"dononame","bloodtype","id"}, new int[]{R.id.dononame, R.id.bloodtype, R.id.id});
+        ListAdapter adapter=new SimpleAdapter(ViewRecords.this, AL, R.layout.list_row,new String[]{"dononame","id","bloodtype"}, new int[]{R.id.dononame, R.id.bloodtype, R.id.id});
         lv.setAdapter(adapter);
     }
 }

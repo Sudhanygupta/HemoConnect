@@ -20,7 +20,7 @@ public class AddRecords extends AppCompatActivity {
     EditText dname, rname, eid, ebloodtype, ddate, rdate;
     Intent intent;
     DBHandler db;
-    private Object SQLiteDataBaseQueryHolder;
+    //private Object SQLiteDataBaseQueryHolder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,7 @@ public class AddRecords extends AppCompatActivity {
         ebloodtype=findViewById(R.id.editTextTextPersonName5);
         ddate=findViewById(R.id.editTextTextPersonName6);
         rdate=findViewById(R.id.editTextTextPersonName7);
+
         db=new DBHandler(this);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,9 +50,12 @@ public class AddRecords extends AppCompatActivity {
                 //dbHandler.insert(dononame, recname, id, bloodtype, donodate, recdate);
                 Boolean insert=db.insert(dononame, recname, id, bloodtype, donodate, recdate);
                 if(insert==true){
-                    Toast.makeText(getApplicationContext(), "Details Inserted Successfully",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddRecords.this, "Details Inserted Successfully",Toast.LENGTH_SHORT).show();
                     intent=new Intent(AddRecords.this, MainActivity.class);
                     startActivity(intent);
+                }
+                else{
+                    Toast.makeText(AddRecords.this, "Can't add record to table.",Toast.LENGTH_SHORT).show();
                 }
             }
         });
