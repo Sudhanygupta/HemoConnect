@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:hint="Donator name"
-        android:textSize="17dp" />
+        android:textSize="20dp" />
     <TextView
         android:id="@+id/bloodtype"
         android:hint="Bloodtype"
@@ -19,7 +19,7 @@
         android:layout_below="@id/dononame"
         android:layout_marginTop="7dp"
         android:textColor="#343434"
-        android:textSize="14dp" />
+        android:textSize="18dp" />
     <TextView
         android:id="@+id/id"
         android:layout_width="wrap_content"
@@ -29,5 +29,5 @@
         android:layout_alignBottom="@+id/bloodtype"
         android:layout_alignParentRight="true"
         android:textColor="#343434"
-        android:textSize="14dp" />
+        android:textSize="18dp" />
 </RelativeLayout>
