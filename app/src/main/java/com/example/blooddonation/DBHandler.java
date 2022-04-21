@@ -22,12 +22,6 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String donodate="donodate";
     private static final String recdate="recdate";
 
-    /*
-    public DbHandler(Context context){
-        super(context,DBNAME, null, DB_VERSION);
-    }
-    */
-
     public DBHandler(Context context){ super(context, "usersdb.db", null, 1);
     }
 
@@ -84,7 +78,6 @@ public class DBHandler extends SQLiteOpenHelper {
         }
         return AL;
     }
-
 
     public Integer deletedetails(String id){
             SQLiteDatabase db=this.getWritableDatabase();
