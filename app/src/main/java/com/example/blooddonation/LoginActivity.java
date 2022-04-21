@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
         login=findViewById(R.id.button10);
         signup=findViewById(R.id.button11);
         db=new DBhelper(this);
-
+        un.requestFocus();
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
