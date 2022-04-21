@@ -31,6 +31,7 @@ public class ViewRecords extends AppCompatActivity {
 
         eid=findViewById(R.id.editTextTextPersonName);
         allrecs=findViewById(R.id.button5);
+        allrecs.requestFocus();
         allrecs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
