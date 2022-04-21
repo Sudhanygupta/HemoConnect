@@ -61,18 +61,22 @@ public class DeleteRecords extends AppCompatActivity {
             }
         });
 
-
         delete=findViewById(R.id.button7);
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Integer deleterows=db.deletedetails(eid.getText().toString());
-                Intent i=new Intent(DeleteRecords.this, MainActivity.class);
-                startActivity(i);
-                if (deleterows > 0) {
-                    Toast.makeText(DeleteRecords.this, "Data deleted", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(DeleteRecords.this, "Data not deleted", Toast.LENGTH_SHORT).show();
+                if(s.isChecked()){
+                    Integer deleterows=db.deletedetails(eid.getText().toString());
+                    Intent i=new Intent(DeleteRecords.this, MainActivity.class);
+                    startActivity(i);
+                    if (deleterows > 0) {
+                        Toast.makeText(DeleteRecords.this, "Data deleted", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(DeleteRecords.this, "Data not deleted", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                else{
+                    Toast.makeText(DeleteRecords.this, "Please click on confirmation switch", Toast.LENGTH_SHORT).show();
                 }
             }
         });
