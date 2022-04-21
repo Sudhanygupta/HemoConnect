@@ -17,7 +17,7 @@ import android.widget.Toast;
 public class DeleteRecords extends AppCompatActivity {
 
     EditText eid;
-    Button delete, home;
+    Button delete;
     DBHandler db;
     TextView warning;
     Switch s;
@@ -63,31 +63,19 @@ public class DeleteRecords extends AppCompatActivity {
 
 
         delete=findViewById(R.id.button7);
-            delete.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Integer deleterows=db.deletedetails(eid.getText().toString());
-                    Intent i=new Intent(DeleteRecords.this, MainActivity.class);
-                    startActivity(i);
-                    if (deleterows > 0) {
-                        Toast.makeText(DeleteRecords.this, "Data deleted", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(DeleteRecords.this, "Data not deleted", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-
-
-        /*
-        home=findViewById(R.id.button12);
-        home.setOnClickListener(new View.OnClickListener() {
+        delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Integer deleterows=db.deletedetails(eid.getText().toString());
                 Intent i=new Intent(DeleteRecords.this, MainActivity.class);
                 startActivity(i);
+                if (deleterows > 0) {
+                    Toast.makeText(DeleteRecords.this, "Data deleted", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(DeleteRecords.this, "Data not deleted", Toast.LENGTH_SHORT).show();
+                }
             }
         });
-        */
 
     }
 
