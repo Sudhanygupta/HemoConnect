@@ -14,6 +14,17 @@ public class SignupActivity extends AppCompatActivity {
     EditText un, pass, repass;
     Button signup;
     DBhelper db;
+
+    /*
+    private static final Pattern PASSWORD_PATTERN =
+            Pattern.compile("^" +
+                    "(?=.*[@#$%^&+=])" +
+                    "(?=\\S+$)" +
+                    ".{4,}" +
+                    "$");
+
+     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +35,23 @@ public class SignupActivity extends AppCompatActivity {
         pass=findViewById(R.id.editTextTextPersonName10);
         repass=findViewById(R.id.editTextTextPersonName11);
         db=new DBhelper(this);
+
+        /*
+        private boolean validatePassword() {
+            String passwordInput = pass.getText().toString().trim();
+            if (passwordInput.isEmpty()) {
+                pass.setError("Field can not be empty");
+                return false;
+            }
+            else if (!PASSWORD_PATTERN.matcher(passwordInput).matches()) {
+                pass.setError("Password is too weak");
+                return false;
+            } else {
+                pass.setError(null);
+                return true;
+            }
+        }
+         */
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +90,7 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     public void loginActivity(){
-        Intent i=new Intent(this, LoginActiviy.class);
+        Intent i=new Intent(this, LoginActivity.class);
         startActivity(i);
     }
 
