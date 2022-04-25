@@ -96,4 +96,5 @@ public class DBHandler extends SQLiteOpenHelper {
             db.update(bloodrecords, contentValues, "ID=?",new String[] { id });
         return true;
         }
+
 }

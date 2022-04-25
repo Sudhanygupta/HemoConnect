@@ -45,7 +45,7 @@ public class AddRecords extends AppCompatActivity {
                 String recdate=rdate.getText().toString();
                 Boolean insert=db.insert(dononame, recname, id, bloodtype, donodate, recdate);
                 if(insert==true){
-                    Toast.makeText(AddRecords.this, "Details Inserted Successfully",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddRecords.this, "Details inserted successfully",Toast.LENGTH_SHORT).show();
                     intent=new Intent(AddRecords.this, MainActivity.class);
                     startActivity(intent);
                 }

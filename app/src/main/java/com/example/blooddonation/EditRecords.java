@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class EditRecords extends AppCompatActivity {
 
@@ -33,7 +34,22 @@ public class EditRecords extends AppCompatActivity {
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String dononame=dname.getText().toString();
+                String recname=rname.getText().toString();
+                String id=eid.getText().toString();
+                String bloodtype=ebloodtype.getText().toString();
+                String donodate=ddate.getText().toString();
+                String recdate=rdate.getText().toString();
 
+                Boolean updaterecords=db.updaterecords(dononame, recname, id, bloodtype, donodate, recdate);
+                if(updaterecords==true){
+                    Toast.makeText(EditRecords.this, "Details updated successfully",Toast.LENGTH_SHORT).show();
+                    intent=new Intent(EditRecords.this, MainActivity.class);
+                    startActivity(intent);
+                }
+                else{
+                    Toast.makeText(EditRecords.this, "Can't update record to table.",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
