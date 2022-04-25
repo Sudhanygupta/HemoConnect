@@ -84,4 +84,16 @@ public class DBHandler extends SQLiteOpenHelper {
             return db.delete(bloodrecords, "id=?", new String[]{id});
         }
 
+        public boolean updaterecords(String dononame, String recname, String id, String bloodtype, String donodate, String recdate){
+        SQLiteDatabase db=this.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("dononame", dononame);
+            contentValues.put("recname", recname);
+            contentValues.put("id", id);
+            contentValues.put("bloodtype", bloodtype);
+            contentValues.put("donodate", donodate);
+            contentValues.put("recdate", recdate);
+            db.update(bloodrecords, contentValues, "ID=?",new String[] { id });
+        return true;
+        }
 }
