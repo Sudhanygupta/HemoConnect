@@ -5,8 +5,11 @@
       <map>
         <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/drawable/buttonshadow.xml" value="0.2555" />
         <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/drawable/buttonshape.xml" value="0.2555" />
+        <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/drawable/dropdownborder.xml" value="0.2555" />
+        <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/drawable/floatingbuttonshape.xml" value="0.2555" />
         <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/drawable/roundborderedittext.xml" value="0.2555" />
         <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/layout/activity_add_records.xml" value="0.25" />
+        <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/layout/activity_check_avail.xml" value="0.25" />
         <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/layout/activity_delete_records.xml" value="0.25" />
         <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/layout/activity_edit_records.xml" value="0.25" />
         <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/layout/activity_login.xml" value="0.264" />

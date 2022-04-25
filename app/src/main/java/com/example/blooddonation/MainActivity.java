@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button viewrecords, addrecords, deleterecords, editrecords;
+    Button viewrecords, addrecords, deleterecords, editrecords, checkavail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         addrecords=findViewById(R.id.button2);
         deleterecords=findViewById(R.id.button3);
         editrecords=findViewById(R.id.button12);
+        checkavail=findViewById(R.id.button15);
 
         editrecords.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,5 +52,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+
+        checkavail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ab=new Intent(MainActivity.this, CheckAvail.class);
+                startActivity(ab);
+            }
+        });
+
+
     }
 }
