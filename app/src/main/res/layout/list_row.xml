@@ -23,9 +23,22 @@
         android:textSize="18dp" />
 
     <TextView
+        android:id="@+id/ddate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/dononame"
+        android:layout_alignBottom="@+id/dononame"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="7dp"
+        android:hint="Donation"
+        android:textColor="@color/black"
+        android:textSize="18dp" />
+
+    <TextView
         android:id="@+id/id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/ddate"
         android:layout_alignBaseline="@+id/bloodtype"
         android:layout_alignBottom="@+id/bloodtype"
         android:layout_alignParentRight="true"

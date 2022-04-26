@@ -53,12 +53,13 @@ public class DBHandler extends SQLiteOpenHelper {
     public ArrayList<HashMap<String, String>> getdetails(){
         SQLiteDatabase db=this.getWritableDatabase();
         ArrayList<HashMap<String, String>> AL=new ArrayList<>();
-        Cursor c=db.rawQuery("SELECT dononame, id, bloodtype FROM bloodrecords",null);
+        Cursor c=db.rawQuery("SELECT dononame, id, bloodtype, donodate FROM bloodrecords",null);
         while (c.moveToNext()){
             HashMap<String,String> br=new HashMap<>();
             br.put("dononame", c.getString(c.getColumnIndexOrThrow(dononame)));
             br.put("id",c.getString(c.getColumnIndexOrThrow(id)));
             br.put("bloodtype",c.getString(c.getColumnIndexOrThrow(bloodtype)));
+            br.put("donodate",c.getString(c.getColumnIndexOrThrow(donodate)));
             AL.add(br);
         }
         return AL;
