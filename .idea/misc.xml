@@ -18,10 +18,11 @@
         <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/layout/activity_login_activiy.xml" value="0.25" />
         <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/layout/activity_maps.xml" value="0.25" />
         <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/layout/activity_signup.xml" value="0.25" />
         <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/layout/activity_splash_screen.xml" value="0.264" />
         <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/layout/activity_view_records.xml" value="0.264" />
-        <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/layout/list_row.xml" value="0.1" />
+        <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/layout/list_row.xml" value="0.264" />
         <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/layout/list_row_appointment.xml" value="0.25" />
         <entry key="..\:/Android Studio/BloodDonation/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1355" />
       </map>
