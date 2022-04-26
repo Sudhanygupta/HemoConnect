@@ -10,4 +10,5 @@
         <item>O+</item>
         <item>O-</item>
     </string-array>
+    <string name="hyperlink">For more details or to search on a larger scale, please visit <a href="http://nbtc.naco.gov.in/">National Blood Transfusion Council</a></string>
 </resources>

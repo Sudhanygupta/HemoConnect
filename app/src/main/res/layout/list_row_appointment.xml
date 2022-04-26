@@ -4,21 +4,22 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="5dip" >
+
     <TextView
         android:id="@+id/dononame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
         android:hint="Donor name"
+        android:textColor="@color/black"
         android:textSize="20dp" />
 
     <TextView
-        android:id="@+id/bloodtype"
+        android:id="@+id/ddate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/dononame"
         android:layout_marginTop="7dp"
-        android:hint="Bloodtype"
+        android:hint="Donation date"
         android:textColor="@color/black"
         android:textSize="18dp" />
 
@@ -26,8 +27,8 @@
         android:id="@+id/id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/bloodtype"
-        android:layout_alignBottom="@+id/bloodtype"
+        android:layout_alignBaseline="@+id/ddate"
+        android:layout_alignBottom="@+id/ddate"
         android:layout_alignParentRight="true"
         android:hint="ID"
         android:textColor="@color/black"

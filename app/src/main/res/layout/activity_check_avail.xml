@@ -74,6 +74,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:clickable="true"
         android:text="For more details or to search on a larger scale, please visit http://nbtc.naco.gov.in/"
         android:textColor="@color/black"
         android:paddingLeft="25dp"
@@ -84,5 +85,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.839"
         android:scrollHorizontally="true"
-        android:marqueeRepeatLimit="marquee_forever"/>
+        android:marqueeRepeatLimit="marquee_forever" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

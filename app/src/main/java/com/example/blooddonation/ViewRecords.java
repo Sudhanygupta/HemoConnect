@@ -54,7 +54,6 @@ public class ViewRecords extends AppCompatActivity {
             }
         });
 
-
         back=findViewById(R.id.button8);
         back.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BloodDonation">
         <activity
+            android:name=".DeleteBooking"
+            android:exported="false" />
+        <activity
+            android:name=".CheckAppointment"
+            android:exported="false" />
+        <activity
             android:name=".BookAppointment"
             android:exported="false" />
         <activity

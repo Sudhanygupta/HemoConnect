@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class DBHandler extends SQLiteOpenHelper {
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION=1;
     private static final String DBNAME="usersdb.db";
     private static final String bloodrecords="bloodrecords";
     private static final String id="id";
@@ -62,7 +62,7 @@ public class DBHandler extends SQLiteOpenHelper {
             AL.add(br);
         }
         return AL;
-        }
+    }
 
         //remove getcodebyid if any error
     public ArrayList<HashMap<String, String>> getrecordbyid(String id){
@@ -96,5 +96,4 @@ public class DBHandler extends SQLiteOpenHelper {
             db.update(bloodrecords, contentValues, "ID=?",new String[] { id });
         return true;
         }
-
 }
