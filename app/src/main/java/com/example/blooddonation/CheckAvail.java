@@ -51,7 +51,7 @@ public class CheckAvail extends AppCompatActivity  {
         bloodtypes.setAdapter(adapter);
         */
 
-        /*
+
         check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,7 +59,7 @@ public class CheckAvail extends AppCompatActivity  {
                 startActivity(s);
             }
         });
-        */
+
 
         book.setOnClickListener(new View.OnClickListener() {
             @Override
