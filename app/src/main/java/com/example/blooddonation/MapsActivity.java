@@ -42,7 +42,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(@NonNull GoogleMap googleMap) {
         map = googleMap;
         CameraUpdate center= CameraUpdateFactory.newLatLngZoom(new
-                LatLng(18.5204,73.8567),12);
+                LatLng(23.077562442394438,76.85171833105998),10);
         map.moveCamera(center);
     }
 
