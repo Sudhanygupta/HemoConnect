@@ -30,7 +30,7 @@ public class CheckAppointment extends AppCompatActivity {
             public void onClick(View view) {
                 ArrayList<HashMap<String, String>> AL=db.viewbookings();
                 ListView lv=(ListView) findViewById(R.id.appointment_list);
-                ListAdapter adapter=new SimpleAdapter(CheckAppointment.this, AL, R.layout.list_row_appointment,new String[]{"dononame", "id", "donodate"}, new int[]{R.id.dononame, R.id.id, R.id.ddate});
+                ListAdapter adapter=new SimpleAdapter(CheckAppointment.this, AL, R.layout.list_row_appointment,new String[]{"dononame", "id", "donodate", "email"}, new int[]{R.id.dononame, R.id.id, R.id.ddate, R.id.mail});
                 lv.setAdapter(adapter);
             }
         });

@@ -6,6 +6,18 @@
     android:padding="5dip" >
 
     <TextView
+        android:id="@+id/mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/dononame"
+        android:layout_alignBottom="@+id/dononame"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="7dp"
+        android:hint="Email"
+        android:textColor="@color/black"
+        android:textSize="18dp" />
+
+    <TextView
         android:id="@+id/dononame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

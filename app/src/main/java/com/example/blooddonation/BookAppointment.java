@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class BookAppointment extends AppCompatActivity {
     Button book, check, back;
-    EditText dname, eid, ebloodtype, ddate, email;
+    EditText dname, eid, ebloodtype, ddate, mail;
     Intent intent;
     DBbook db;
     @Override
@@ -25,7 +25,7 @@ public class BookAppointment extends AppCompatActivity {
         eid=findViewById(R.id.editTextTextPersonName21);
         ebloodtype=findViewById(R.id.editTextTextPersonName22);
         ddate=findViewById(R.id.editTextTextPersonName23);
-        email=findViewById(R.id.editTextTextPersonName24);
+        mail=findViewById(R.id.editTextTextPersonName24);
 
         dname.requestFocus();
 
@@ -37,7 +37,8 @@ public class BookAppointment extends AppCompatActivity {
                 String id=eid.getText().toString();
                 String bloodtype=ebloodtype.getText().toString();
                 String donodate=ddate.getText().toString();
-                Boolean insert=db.insert(dononame,id, bloodtype, donodate);
+                String email=mail.getText().toString();
+                Boolean insert=db.insert(dononame,id, bloodtype, donodate, email);
                 if(insert==true){
                     Toast.makeText(BookAppointment.this, "Appointment booked.",Toast.LENGTH_SHORT).show();
                     intent=new Intent(BookAppointment.this, CheckAvail.class);
