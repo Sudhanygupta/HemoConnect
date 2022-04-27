@@ -38,7 +38,7 @@ public class CheckAvail extends AppCompatActivity  {
         anim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri uri=Uri.parse("http://nbtc.naco.gov.in/"); // missing 'http://' will cause crashed
+                Uri uri=Uri.parse("http://nbtc.naco.gov.in/");
                 Intent intent=new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
