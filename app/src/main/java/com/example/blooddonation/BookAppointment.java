@@ -33,6 +33,7 @@ public class BookAppointment extends AppCompatActivity {
         book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String dononame=dname.getText().toString();
                 String id=eid.getText().toString();
                 String bloodtype=ebloodtype.getText().toString();
@@ -47,6 +48,16 @@ public class BookAppointment extends AppCompatActivity {
                 else{
                     Toast.makeText(BookAppointment.this, "Can't book appointment.",Toast.LENGTH_SHORT).show();
                 }
+
+                String emailsend=mail.getText().toString();
+                String emailsubject="Booking confirmed on: "+ddate.getText().toString();
+                String emailbody="Your booking for blood donation on the date: "+donodate+" and ID: "+id+" is confirmed. For more details please contact +919303961043. \n Please do not reply to this email, it is sent by an automated service.";
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[] { emailsend });
+                intent.putExtra(Intent.EXTRA_SUBJECT, emailsubject);
+                intent.putExtra(Intent.EXTRA_TEXT, emailbody);
+                intent.setType("message/rfc822");
+                startActivity(Intent.createChooser(intent, "Choose an Email client :"));
             }
         });
 
