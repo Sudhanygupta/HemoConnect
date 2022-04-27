@@ -15,9 +15,9 @@ import android.widget.Toast;
 
 public class DeleteBooking extends AppCompatActivity {
 
-    EditText eid;
+    EditText eid, mail;
     Button delete;
-    DBHandler db;
+    DBbook db;
     TextView warning;
     Switch s;
     @Override
@@ -25,12 +25,12 @@ public class DeleteBooking extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_booking);
 
-        db=new DBHandler(DeleteBooking.this);
+        db=new DBbook(this);
 
         s=findViewById(R.id.switch3);
         warning=findViewById(R.id.textView69);
         eid=findViewById(R.id.editTextTextPersonName25);
-        String id=eid.getText().toString();
+        mail=findViewById(R.id.editTextTextPersonName26);
 
         s.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,7 +38,7 @@ public class DeleteBooking extends AppCompatActivity {
                 AlertDialog.Builder builder=new AlertDialog.Builder(DeleteBooking.this);
                 builder.setCancelable(true);
                 builder.setTitle("Alert!");
-                builder.setMessage("Once deleted, records will be lost forever.");
+                builder.setMessage("This confirms blood was donated or booking was cancelled.");
 
                 builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
@@ -64,14 +64,25 @@ public class DeleteBooking extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String id=eid.getText().toString();
                 if(s.isChecked()){
-                    Integer deleterows=db.deletedetails(eid.getText().toString());
+                    Integer deleterows=db.deletebooking(eid.getText().toString());
                     Intent i=new Intent(DeleteBooking.this, MainActivity.class);
                     startActivity(i);
                     if (deleterows > 0) {
-                        Toast.makeText(DeleteBooking.this, "Data deleted", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(DeleteBooking.this, "Done.", Toast.LENGTH_SHORT).show();
+                        String emailsend=mail.getText().toString();
+                        String emailsubject="Booking confirmed and finished.";
+                        String emailbody="Your booking for blood donation with ID: "+id+" is done. \n For more details please contact +919303961043. \n Please do not reply to this email, it is sent by an automated service.";
+                        Intent intent = new Intent(Intent.ACTION_SEND);
+                        intent.putExtra(Intent.EXTRA_EMAIL, new String[] { emailsend });
+                        intent.putExtra(Intent.EXTRA_SUBJECT, emailsubject);
+                        intent.putExtra(Intent.EXTRA_TEXT, emailbody);
+                        intent.setType("message/rfc822");
+                        startActivity(Intent.createChooser(intent, "Choose an Email client :"));
+
                     } else {
-                        Toast.makeText(DeleteBooking.this, "Data not deleted", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(DeleteBooking.this, "Booking record not deleted.", Toast.LENGTH_SHORT).show();
                     }
                 }
                 else{

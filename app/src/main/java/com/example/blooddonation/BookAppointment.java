@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class BookAppointment extends AppCompatActivity {
-    Button book, check, back;
+    Button book, check, back, delete;
     EditText dname, eid, ebloodtype, ddate, mail;
     Intent intent;
     DBbook db;
@@ -51,7 +51,7 @@ public class BookAppointment extends AppCompatActivity {
 
                 String emailsend=mail.getText().toString();
                 String emailsubject="Booking confirmed on: "+ddate.getText().toString();
-                String emailbody="Your booking for blood donation on the date: "+donodate+" and ID: "+id+" is confirmed. For more details please contact +919303961043. \n Please do not reply to this email, it is sent by an automated service.";
+                String emailbody="Your booking for blood donation on the date: "+donodate+" and ID: "+id+" is confirmed. \n For more details please contact +919303961043. \n Please do not reply to this email, it is sent by an automated service.";
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.putExtra(Intent.EXTRA_EMAIL, new String[] { emailsend });
                 intent.putExtra(Intent.EXTRA_SUBJECT, emailsubject);
@@ -76,6 +76,15 @@ public class BookAppointment extends AppCompatActivity {
             public void onClick(View view) {
                 Intent b=new Intent(BookAppointment.this, MainActivity.class);
                 startActivity(b);
+            }
+        });
+
+        delete=findViewById(R.id.button24);
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent s=new Intent(BookAppointment.this, DeleteBooking.class);
+                startActivity(s);
             }
         });
 

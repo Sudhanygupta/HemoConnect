@@ -7,6 +7,24 @@
     android:background="#FFFFFF"
     tools:context=".DeleteRecords">
 
+    <EditText
+        android:id="@+id/editTextTextPersonName26"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/roundborderedittext"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Email ID"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textColorHint="#696969"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.433" />
+
     <Button
         android:id="@+id/button25"
         android:layout_width="150dp"
@@ -36,7 +54,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.434" />
+        app:layout_constraintVertical_bias="0.349" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -54,7 +72,7 @@
         android:id="@+id/textView69"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:text="Warning. Deleted records will be lost forever."
+        android:text="Please confirm appointment completed or cancelled."
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,7 +85,7 @@
         android:id="@+id/switch3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Confirm delete"
+        android:text="Confirm"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
