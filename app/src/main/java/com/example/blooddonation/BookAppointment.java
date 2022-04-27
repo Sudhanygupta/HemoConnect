@@ -58,6 +58,7 @@ public class BookAppointment extends AppCompatActivity {
                 intent.putExtra(Intent.EXTRA_TEXT, emailbody);
                 intent.setType("message/rfc822");
                 startActivity(Intent.createChooser(intent, "Choose an Email client :"));
+
             }
         });
 
