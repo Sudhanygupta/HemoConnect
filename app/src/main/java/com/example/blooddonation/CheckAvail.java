@@ -44,19 +44,22 @@ public class CheckAvail extends AppCompatActivity  {
             }
         });
 
+        /*
         Spinner bloodtypes=findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this, R.array.bloodtypes, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         bloodtypes.setAdapter(adapter);
+        */
 
         /*
         check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent s=new Intent(CheckAvail.this, MapsActivity.class);
+                startActivity(s);
             }
         });
-         */
+        */
 
         book.setOnClickListener(new View.OnClickListener() {
             @Override

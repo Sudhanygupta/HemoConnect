@@ -11,6 +11,4 @@
         <item>O-</item>
     </string-array>
     <string name="hyperlink">For more details or to search on a larger scale, please visit <a href="http://nbtc.naco.gov.in/">National Blood Transfusion Council</a></string>
-    <string name="title_activity_maps">MapsActivity</string>
-    <string name="api_key">AIzaSyDGLSvWZHq8mfAJJoM8TIUcVjJ_FJp7Jy8</string>
 </resources>
