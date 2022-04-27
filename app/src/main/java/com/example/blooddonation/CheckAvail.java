@@ -20,7 +20,7 @@ import java.util.Calendar;
 public class CheckAvail extends AppCompatActivity  {
 
     TextView anim;
-    Button check, call, book;
+    Button check, call, book, back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class CheckAvail extends AppCompatActivity  {
         check=findViewById(R.id.button16);
         call=findViewById(R.id.button17);
         book=findViewById(R.id.button18);
+        back=findViewById(R.id.button27);
 
         anim=findViewById(R.id.textView4);
         anim.setEllipsize(TextUtils.TruncateAt.MARQUEE);
@@ -51,6 +52,13 @@ public class CheckAvail extends AppCompatActivity  {
         bloodtypes.setAdapter(adapter);
         */
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ab=new Intent(CheckAvail.this, MainActivity.class);
+                startActivity(ab);
+            }
+        });
 
         check.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -18,6 +18,7 @@ import com.google.android.gms.maps.model.LatLng;
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
     GoogleMap map;
     Button back;
+    Double lati, longi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
