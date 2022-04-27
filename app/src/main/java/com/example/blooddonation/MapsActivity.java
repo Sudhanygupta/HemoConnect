@@ -2,8 +2,13 @@ package com.example.blooddonation;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,12 +18,17 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
+
     GoogleMap map;
     Button back;
     Double lati, longi;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,9 +51,38 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         map = googleMap;
-        CameraUpdate center= CameraUpdateFactory.newLatLngZoom(new
-                LatLng(23.077562442394438,76.85171833105998),10);
+        CameraUpdate center= CameraUpdateFactory.newLatLngZoom(new LatLng(23.077562442394438,76.85171833105998),10);
         map.moveCamera(center);
+
+        LatLng asta = new LatLng(23.077, 76.851);
+        map.addMarker(new MarkerOptions().position(asta).title("Marker near Bhopal").icon(BitmapFromVector(getApplicationContext(), R.drawable.ic_flag)));
+        map.moveCamera(CameraUpdateFactory.newLatLng(asta));
+
+        LatLng hosp1 = new LatLng(23.040545903309102, 76.84875946560999);
+        map.addMarker(new MarkerOptions().position(hosp1).title("Marker on nearest hospital").icon(BitmapFromVector(getApplicationContext(), R.drawable.ic_flag_dest)));
+        map.moveCamera(CameraUpdateFactory.newLatLng(hosp1));
+
+        LatLng hosp2 = new LatLng(23.04587360905058, 76.84627480445943);
+        map.addMarker(new MarkerOptions().position(hosp2).title("Marker on nearest hospital").icon(BitmapFromVector(getApplicationContext(), R.drawable.ic_flag_dest)));
+        map.moveCamera(CameraUpdateFactory.newLatLng(hosp2));
+
+        LatLng hosp3 = new LatLng(23.03752057070799, 76.85180156719113);
+        map.addMarker(new MarkerOptions().position(hosp3).title("Marker on nearest hospital").icon(BitmapFromVector(getApplicationContext(), R.drawable.ic_flag_dest)));
+        map.moveCamera(CameraUpdateFactory.newLatLng(hosp3));
+
+        LatLng hosp4 = new LatLng(23.078601296264093, 76.83470709302887);
+        map.addMarker(new MarkerOptions().position(hosp4).title("Marker on nearest hospital").icon(BitmapFromVector(getApplicationContext(), R.drawable.ic_flag_dest)));
+        map.moveCamera(CameraUpdateFactory.newLatLng(hosp4));
+
+    }
+
+    private BitmapDescriptor BitmapFromVector(Context context, int vectorResId) {
+        Drawable vectorDrawable = ContextCompat.getDrawable(context, vectorResId);
+        vectorDrawable.setBounds(0, 0, vectorDrawable.getIntrinsicWidth(), vectorDrawable.getIntrinsicHeight());
+        Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(), vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        vectorDrawable.draw(canvas);
+        return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
 
 }
