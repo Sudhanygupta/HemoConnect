@@ -88,6 +88,10 @@ public class DeleteBooking extends AppCompatActivity {
                 else{
                     Toast.makeText(DeleteBooking.this, "Please click on confirmation switch", Toast.LENGTH_SHORT).show();
                 }
+
+                Intent ab=new Intent(DeleteBooking.this, BookAppointment.class);
+                startActivity(ab);
+
             }
         });
 
