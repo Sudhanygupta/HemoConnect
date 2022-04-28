@@ -21,6 +21,7 @@ public class DeleteRecords extends AppCompatActivity {
     DBHandler db;
     TextView warning;
     Switch s;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

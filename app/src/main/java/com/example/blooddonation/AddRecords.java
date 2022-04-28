@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class AddRecords extends AppCompatActivity {
+
     Button add;
     EditText dname, rname, eid, ebloodtype, ddate, rdate;
     Intent intent;
@@ -34,9 +35,11 @@ public class AddRecords extends AppCompatActivity {
 
         db=new DBHandler(this);
         dname.requestFocus();
+
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String dononame=dname.getText().toString();
                 String recname=rname.getText().toString();
                 String id=eid.getText().toString();
@@ -52,7 +55,10 @@ public class AddRecords extends AppCompatActivity {
                 else{
                     Toast.makeText(AddRecords.this, "Can't add record to table.",Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
+
     }
+
 }

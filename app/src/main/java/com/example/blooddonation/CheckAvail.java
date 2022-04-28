@@ -87,4 +87,5 @@ public class CheckAvail extends AppCompatActivity  {
         });
 
     }
+
 }

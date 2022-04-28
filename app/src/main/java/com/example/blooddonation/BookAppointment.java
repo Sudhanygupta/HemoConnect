@@ -10,10 +10,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class BookAppointment extends AppCompatActivity {
+
     Button book, check, back, delete;
     EditText dname, eid, ebloodtype, ddate, mail;
     Intent intent;
     DBbook db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,4 +92,5 @@ public class BookAppointment extends AppCompatActivity {
         });
 
     }
+
 }

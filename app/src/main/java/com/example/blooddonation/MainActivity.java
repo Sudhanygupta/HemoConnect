@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     Button viewrecords, addrecords, deleterecords, editrecords, checkavail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         checkavail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,6 +62,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
     }
+
 }

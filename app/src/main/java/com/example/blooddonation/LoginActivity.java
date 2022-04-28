@@ -14,11 +14,11 @@ public class LoginActivity extends AppCompatActivity {
     EditText un, pass;
     Button login, signup;
     DBhelper db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
 
         un=findViewById(R.id.editTextTextPersonName12);
         pass=findViewById(R.id.editTextTextPersonName13);
@@ -46,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 }
             }
+
         });
 
         signup.setOnClickListener(new View.OnClickListener() {
@@ -60,4 +61,5 @@ public class LoginActivity extends AppCompatActivity {
         Intent i=new Intent(this, SignupActivity.class);
         startActivity(i);
     }
+
 }

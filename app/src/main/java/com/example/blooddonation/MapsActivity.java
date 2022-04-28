@@ -50,6 +50,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
+
         map = googleMap;
         CameraUpdate center= CameraUpdateFactory.newLatLngZoom(new LatLng(23.077562442394438,76.85171833105998),10);
         map.moveCamera(center);
@@ -81,6 +82,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     private BitmapDescriptor BitmapFromVector(Context context, int vectorResId) {
+
         Drawable vectorDrawable = ContextCompat.getDrawable(context, vectorResId);
         vectorDrawable.setBounds(0, 0, vectorDrawable.getIntrinsicWidth(), vectorDrawable.getIntrinsicHeight());
         Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(), vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);

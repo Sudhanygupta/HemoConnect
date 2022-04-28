@@ -17,6 +17,7 @@ public class CheckAppointment extends AppCompatActivity {
 
     Button view, back;
     DBbook db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,4 +46,5 @@ public class CheckAppointment extends AppCompatActivity {
         });
 
     }
+
 }

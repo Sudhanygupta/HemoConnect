@@ -69,5 +69,4 @@ public class DBbook extends SQLiteOpenHelper {
         return db.delete(bookings, "id=?", new String[]{id});
     }
 
-
 }

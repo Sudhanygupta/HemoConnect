@@ -22,6 +22,7 @@ public class ViewRecords extends AppCompatActivity {
     EditText eid;
     //String id=eid.getText().toString();
     DBHandler db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,4 +65,5 @@ public class ViewRecords extends AppCompatActivity {
         });
 
     }
+
 }

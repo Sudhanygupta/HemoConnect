@@ -20,6 +20,7 @@ public class DeleteBooking extends AppCompatActivity {
     DBbook db;
     TextView warning;
     Switch s;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,4 +97,5 @@ public class DeleteBooking extends AppCompatActivity {
         });
 
     }
+
 }

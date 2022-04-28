@@ -9,6 +9,7 @@ import android.os.Handler;
 public class SplashScreen extends AppCompatActivity {
 
     private static int SP=1000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,5 +22,7 @@ public class SplashScreen extends AppCompatActivity {
                 finish();
             }
         }, SP);
+
     }
+
 }
