@@ -55,24 +55,28 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         map.moveCamera(center);
 
         LatLng asta = new LatLng(23.077, 76.851);
-        map.addMarker(new MarkerOptions().position(asta).title("Marker near Bhopal").icon(BitmapFromVector(getApplicationContext(), R.drawable.ic_flag)));
+        map.addMarker(new MarkerOptions().position(asta).title("Current location").icon(BitmapFromVector(getApplicationContext(), R.drawable.ic_flag)));
         map.moveCamera(CameraUpdateFactory.newLatLng(asta));
 
         LatLng hosp1 = new LatLng(23.040545903309102, 76.84875946560999);
-        map.addMarker(new MarkerOptions().position(hosp1).title("Marker on nearest hospital").icon(BitmapFromVector(getApplicationContext(), R.drawable.ic_flag_dest)));
+        map.addMarker(new MarkerOptions().position(hosp1).title("Marker on nearest hospitals").icon(BitmapFromVector(getApplicationContext(), R.drawable.ic_flag_dest)));
         map.moveCamera(CameraUpdateFactory.newLatLng(hosp1));
 
         LatLng hosp2 = new LatLng(23.04587360905058, 76.84627480445943);
-        map.addMarker(new MarkerOptions().position(hosp2).title("Marker on nearest hospital").icon(BitmapFromVector(getApplicationContext(), R.drawable.ic_flag_dest)));
+        map.addMarker(new MarkerOptions().position(hosp2).title("Marker on nearest hospitals").icon(BitmapFromVector(getApplicationContext(), R.drawable.ic_flag_dest)));
         map.moveCamera(CameraUpdateFactory.newLatLng(hosp2));
 
         LatLng hosp3 = new LatLng(23.03752057070799, 76.85180156719113);
-        map.addMarker(new MarkerOptions().position(hosp3).title("Marker on nearest hospital").icon(BitmapFromVector(getApplicationContext(), R.drawable.ic_flag_dest)));
+        map.addMarker(new MarkerOptions().position(hosp3).title("Marker on nearest hospitals").icon(BitmapFromVector(getApplicationContext(), R.drawable.ic_flag_dest)));
         map.moveCamera(CameraUpdateFactory.newLatLng(hosp3));
 
         LatLng hosp4 = new LatLng(23.078601296264093, 76.83470709302887);
-        map.addMarker(new MarkerOptions().position(hosp4).title("Marker on nearest hospital").icon(BitmapFromVector(getApplicationContext(), R.drawable.ic_flag_dest)));
+        map.addMarker(new MarkerOptions().position(hosp4).title("Marker on nearest hospitals").icon(BitmapFromVector(getApplicationContext(), R.drawable.ic_flag_dest)));
         map.moveCamera(CameraUpdateFactory.newLatLng(hosp4));
+
+        LatLng bbank1 = new LatLng(23.20979436644797, 77.08429547780099);
+        map.addMarker(new MarkerOptions().position(bbank1).title("Marker on nearest blood bank").icon(BitmapFromVector(getApplicationContext(), R.drawable.ic_flag_bbank)));
+        map.moveCamera(CameraUpdateFactory.newLatLng(bbank1));
 
     }
 
