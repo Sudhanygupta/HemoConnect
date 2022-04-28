@@ -19,7 +19,6 @@ public class SignupActivity extends AppCompatActivity {
 
     private static final Pattern passmin=Pattern.compile("^"+"(?=.*[@#$%^&+=])"+"(?=\\S+$)"+".{4,}"+"$");
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
