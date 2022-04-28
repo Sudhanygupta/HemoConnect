@@ -74,7 +74,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         map.addMarker(new MarkerOptions().position(hosp4).title("Marker on nearest hospitals").icon(BitmapFromVector(getApplicationContext(), R.drawable.ic_flag_dest)));
         map.moveCamera(CameraUpdateFactory.newLatLng(hosp4));
 
-        LatLng bbank1 = new LatLng(23.20979436644797, 77.08429547780099);
+        LatLng bbank1 = new LatLng(23.199215352611322, 77.08303052912595);
         map.addMarker(new MarkerOptions().position(bbank1).title("Marker on nearest blood bank").icon(BitmapFromVector(getApplicationContext(), R.drawable.ic_flag_bbank)));
         map.moveCamera(CameraUpdateFactory.newLatLng(bbank1));
 
