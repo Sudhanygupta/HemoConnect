@@ -90,9 +90,6 @@ public class DeleteBooking extends AppCompatActivity {
                 intent.setType("message/rfc822");
                 startActivity(Intent.createChooser(intent, "Choose an Email client :"));
 
-                //Intent ab=new Intent(DeleteBooking.this, BookAppointment.class);
-                //startActivity(ab);
-
             }
         });
 
