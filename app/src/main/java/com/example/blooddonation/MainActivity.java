@@ -1,11 +1,12 @@
 package com.example.blooddonation;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
+import java.util.zip.Inflater;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.view.*;
+import android.widget.*;
 
 public class MainActivity extends AppCompatActivity {
 
