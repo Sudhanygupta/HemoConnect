@@ -92,6 +92,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent ia=new Intent(MainActivity.this, ViewRecords.class);
                 startActivity(ia);
                 return true;
+            case R.id.item5:
+                Intent ig=new Intent(MainActivity.this, CheckAvail.class);
+                startActivity(ig);
+                return true;
             default:return super.onOptionsItemSelected(item);
         }
     }

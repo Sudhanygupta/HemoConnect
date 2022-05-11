@@ -21,4 +21,9 @@
         android:title="View records"
         android:textColor="@color/black"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/item5"
+        android:title="Check Availability"
+        android:textColor="@color/black"
+        app:showAsAction="never" />
 </menu>

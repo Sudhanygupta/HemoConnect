@@ -54,6 +54,7 @@ public class ViewRecords extends AppCompatActivity {
                 lv.setAdapter(adapter);
             }
         });
+        //end single record code
 
         back=findViewById(R.id.button8);
         back.setOnClickListener(new View.OnClickListener() {

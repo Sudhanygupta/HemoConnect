@@ -52,13 +52,14 @@ public class DBbook extends SQLiteOpenHelper {
     public ArrayList<HashMap<String, String>> viewbookings(){
         SQLiteDatabase db=this.getWritableDatabase();
         ArrayList<HashMap<String, String>> AL=new ArrayList<>();
-        Cursor c=db.rawQuery("SELECT dononame, id, donodate, email FROM bookings",null);
+        Cursor c=db.rawQuery("SELECT dononame, id, donodate, email, bloodtype FROM bookings",null);
         while (c.moveToNext()){
             HashMap<String,String> b=new HashMap<>();
             b.put("dononame", c.getString(c.getColumnIndexOrThrow(dononame)));
             b.put("id", c.getString(c.getColumnIndexOrThrow(id)));
             b.put("donodate", c.getString(c.getColumnIndexOrThrow(donodate)));
             b.put("email", c.getString(c.getColumnIndexOrThrow(email)));
+            b.put("bloodtype", c.getString(c.getColumnIndexOrThrow(bloodtype)));
             AL.add(b);
         }
         return AL;
