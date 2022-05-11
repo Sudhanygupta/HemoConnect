@@ -22,7 +22,7 @@ public class DBbook extends SQLiteOpenHelper {
     private static final String donodate="donodate";
     private static final String email="email";
 
-    public DBbook(Context context){ super(context, "users.db", null, 1);
+    public DBbook(Context context){ super(context, DBNAME, null, DB_VERSION);
     }
 
     @Override
