@@ -77,7 +77,7 @@ public class BookAppointment extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent b=new Intent(BookAppointment.this, MainActivity.class);
+                Intent b=new Intent(BookAppointment.this, CheckAvail.class);
                 startActivity(b);
             }
         });

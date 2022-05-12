@@ -1,5 +1,6 @@
 package com.example.blooddonation;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -12,6 +13,9 @@ import android.os.Bundle;
 import android.text.Html;
 import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -91,5 +95,42 @@ public class CheckAvail extends AppCompatActivity  {
         });
 
     }
+
+    //menu code start
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.check_avail_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.item1:
+                Intent i=new Intent(CheckAvail.this, TestActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.item2:
+                Intent a=new Intent(CheckAvail.this, MapsActivity.class);
+                startActivity(a);
+                return true;
+            case R.id.item3:
+                Intent ib=new Intent(CheckAvail.this, BookAppointment.class);
+                startActivity(ib);
+                return true;
+            case R.id.item4:
+                Intent ia=new Intent(CheckAvail.this, CheckAppointment.class);
+                startActivity(ia);
+                return true;
+            case R.id.item5:
+                Intent intent=new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:104"));
+                startActivity(intent);
+                return true;
+            default:return super.onOptionsItemSelected(item);
+        }
+    }
+    //menu code end
 
 }
