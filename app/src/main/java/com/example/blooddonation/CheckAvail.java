@@ -33,7 +33,7 @@ public class CheckAvail extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_avail);
-
+        /*
         check=findViewById(R.id.button28);
         book=findViewById(R.id.button18);
         call=findViewById(R.id.button17);
@@ -93,6 +93,7 @@ public class CheckAvail extends AppCompatActivity  {
                 startActivity(ab);
             }
         });
+        */
 
     }
 
