@@ -101,6 +101,7 @@
         android:clickable="true"
         android:marqueeRepeatLimit="marquee_forever"
         android:paddingLeft="25dp"
+        android:paddingRight="25dp"
         android:scrollHorizontally="true"
         android:text="For more details or to search on a larger scale, please visit http://nbtc.naco.gov.in/"
         android:textColor="@color/black"

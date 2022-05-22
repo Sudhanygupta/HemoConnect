@@ -33,6 +33,7 @@ public class CheckAvail extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_avail);
+        anim=findViewById(R.id.textView4);
         /*
         check=findViewById(R.id.button28);
         book=findViewById(R.id.button18);
@@ -94,6 +95,18 @@ public class CheckAvail extends AppCompatActivity  {
             }
         });
         */
+
+        anim.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+        anim.setSelected(true);
+        anim.setSingleLine(true);
+        anim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri uri=Uri.parse("http://nbtc.naco.gov.in/");
+                Intent intent=new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
 
     }
 
