@@ -33,7 +33,6 @@ public class CheckAvail extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_avail);
-        anim=findViewById(R.id.textView4);
         /*
         check=findViewById(R.id.button28);
         book=findViewById(R.id.button18);
@@ -96,6 +95,7 @@ public class CheckAvail extends AppCompatActivity  {
         });
         */
 
+        anim=findViewById(R.id.textView4);
         anim.setEllipsize(TextUtils.TruncateAt.MARQUEE);
         anim.setSelected(true);
         anim.setSingleLine(true);
